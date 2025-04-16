@@ -4,12 +4,7 @@
   <meta charset="UTF-8">
   <title>ピンクダイアモンド 使い方 日本語</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
+    body {
       margin: 0;
       font-family: sans-serif;
       background-color: #5d6472;
@@ -17,19 +12,21 @@
     }
 
     .tab-header {
-      display: flex;
+      width: 100%;
+      display: table;
       background-color: #333;
+      table-layout: fixed;
     }
 
     .tab-button {
-      flex: 1;
+      display: table-cell;
       padding: 15px;
-      cursor: pointer;
       background-color: #444;
       border: none;
       color: white;
       font-weight: bold;
       text-align: center;
+      cursor: pointer;
     }
 
     .tab-button.active {
@@ -37,42 +34,44 @@
     }
 
     .container {
-      display: flex;
-      height: calc(100% - 50px);
+      display: table;
+      width: 100%;
+      height: 500px;
+      table-layout: fixed;
     }
 
     .left-panel {
-      width: 50%;
-      background-color: #3d3f4a;
-      padding: 20px;
-      overflow-y: auto;
       display: none;
+      background-color: #3d3f4a;
+      padding: 10px;
+      vertical-align: top;
     }
 
     .left-panel.active {
-      display: block;
+      display: table-cell;
+      width: 50%;
     }
 
     .right-panel {
+      display: table-cell;
       width: 50%;
       background-color: #4e5562;
+      text-align: center;
+      vertical-align: middle;
       padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .menu-button {
       display: block;
-      width: 100%;
-      margin: 10px 0;
+      width: 90%;
+      margin: 10px auto;
       padding: 10px;
       background-color: #663761;
       color: white;
       border: none;
       border-radius: 5px;
-      cursor: pointer;
       text-align: center;
+      cursor: pointer;
     }
 
     .menu-button:hover {
@@ -80,36 +79,26 @@
     }
 
     .message-box {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: #000000;
+      opacity: 0.6;
+      filter: alpha(opacity=60);
       padding: 20px;
       border-radius: 10px;
       font-size: 18px;
-      width: 100%;
-      max-width: 500px;
-      text-align: center;
-      box-shadow: 0 0 5px #000;
-    }
-
-    .left-panel::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .left-panel::-webkit-scrollbar-thumb {
-      background-color: #888;
-      border-radius: 4px;
+      width: 80%;
+      margin: auto;
     }
   </style>
 </head>
 <body>
 
 <div class="tab-header">
-  <button class="tab-button active" onclick="switchTab(0)">機能一覧1</button>
-  <button class="tab-button" onclick="switchTab(1)">機能一覧2</button>
-  <button class="tab-button" onclick="switchTab(2)">機能一覧3</button>
+  <div class="tab-button active" onclick="switchTab(0)">機能一覧1</div>
+  <div class="tab-button" onclick="switchTab(1)">機能一覧2</div>
+  <div class="tab-button" onclick="switchTab(2)">機能一覧3</div>
 </div>
 
 <div class="container">
-  <!-- 左側：ボタン群 -->
   <div class="left-panel active">
     <button class="menu-button" onclick="showMessage('Kaura V4が適応されます。')">KオーラV4</button>
     <button class="menu-button" onclick="showMessage('ZLボタンが連打できます。')">ZL連打</button>
@@ -124,28 +113,28 @@
     <button class="menu-button" onclick="showMessage('ESPが表示されます。')">ESP</button>
   </div>
 
-  <!-- 右側：メッセージ表示 -->
   <div class="right-panel">
-    <div class="message-box" id="messageBox">ここにメッセージが表示されます</div>
+    <div id="messageBox" class="message-box">ここにメッセージが表示されます</div>
   </div>
 </div>
 
 <script>
-  function showMessage(message) {
-    document.getElementById('messageBox').textContent = message;
+  function showMessage(msg) {
+    document.getElementById("messageBox").innerHTML = msg;
   }
 
   function switchTab(index) {
-    const panels = document.querySelectorAll('.left-panel');
-    const tabs = document.querySelectorAll('.tab-button');
-
-    panels.forEach((panel, i) => {
-      panel.classList.toggle('active', i === index);
-    });
-
-    tabs.forEach((tab, i) => {
-      tab.classList.toggle('active', i === index);
-    });
+    var panels = document.getElementsByClassName("left-panel");
+    var tabs = document.getElementsByClassName("tab-button");
+    for (var i = 0; i < panels.length; i++) {
+      if (i === index) {
+        panels[i].className = "left-panel active";
+        tabs[i].className = "tab-button active";
+      } else {
+        panels[i].className = "left-panel";
+        tabs[i].className = "tab-button";
+      }
+    }
   }
 </script>
 
