@@ -2,8 +2,12 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>PinkDiamond 使い方</title>
+  <title>メニューUI風</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: sans-serif;
@@ -13,9 +17,6 @@
       flex-direction: column;
       align-items: center;
       height: 100vh;
-      background-image: url('アイテム.png'); /* 画像にしたい場合 */
-      background-size: cover;
-      background-position: center;
     }
 
     .menu-row {
@@ -55,6 +56,16 @@
       background-color: rgba(0, 0, 0, 0.5);
       width: 100%;
       text-align: center;
+    }
+    
+    @media screen and (max-width: 600px) {
+      .message {
+        font-size: 16px;
+      }
+
+      .menu-button {
+        width: 100%;
+      }
     }
   </style>
 </head>
