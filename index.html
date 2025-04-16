@@ -255,15 +255,15 @@
   <button class="menu-button" onclick="showMessage('飛び道具で当たったブロックが破壊されます。')">飛び道具で破壊</button>
 </div>
 
-  <div class="right-panel">
+<div class="message-box" id="messageArea">ここに説明が表示されます。</div>
+  <!-- <div class="right-panel">
     <div class="message-box" id="messageArea">ここに説明が表示されます。</div>
-  </div>
+  </div> -->
 </div>
 
 <script>
   function showMessage(text) {
-    // document.getElementById('messageArea').innerHTML = text;
-    alert(`${text}`);
+    document.getElementById('messageArea').innerHTML = text;
   }
 </script>
 
