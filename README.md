@@ -1,0 +1,1 @@
+# PinkDiamond_use.jp
