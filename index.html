@@ -239,7 +239,7 @@ a:hover {
     <button class="menu-button" onclick="showMessage('高速でクラフトすることができます。')">高速クラフト</button>
   </div>
   <div class="left-panel">
-    <button class="menu-button" onclick="showMessage('3Dモデルを作成できます。<br>updateを押すことで更新されます。')">3Dアート</button>
+    <button class="menu-button" onclick="show3DModelMessage()">3Dアート</button>
     <button class="menu-button" onclick="showMessage('追放されなくなります。')">アンチキック</button>
     
     <button class="menu-button" onclick="showMessage('コマンドが全て無効化されます。')">アンチコマンド</button>
@@ -283,9 +283,7 @@ a:hover {
         <button class="menu-button" onclick="showMessage('不正で投票された投票を無効化します。')">不正投票無効</button>
     </div>
     <div class="left-panel">
-        <button class="menu-button" onclick="showMessage('看板を使用することで細かな設定を追加することができます。')">
-          サインコマンド
-        </button>
+        <button class="menu-button" onclick="showSignCmdMessage()">サインコマンド</button>
         <button class="menu-button" onclick="showMessage('TNTが爆発したとき、ブロックが破壊されません。')">TNTブロック破壊無効</button>
         <button class="menu-button" onclick="showMessage('コンボを設定することができます。<br>コンボを調整できます。')">カスタムコンボ</button>
         <button class="menu-button" onclick="showMessage('エンチャント内容を合成するときの上限がなくなります。')">エンチャント上限解除</button>
@@ -392,6 +390,41 @@ a:hover {
     5段階に調整できますが上げすぎるとサーバーに負荷が掛かります<br>
     「十字右 & R」で精度(負荷が掛かります)を上げます<br>
     「十字右 & L」で精度(負荷が下がります)を下げます
+  `;
+  showMessage(message);
+}
+
+  function showSignCmdMessage() {
+  const message = `
+    サインコマンドが適応されます。<br><br>
+    サインコマンドの主な情報<br>
+
+    看板を使用することで細かな設定を追加することができます。<br>
+    現在導入予定なコマンド内容はこちらです。<br>
+    EffectCommand  <br>
+    GameModeCommand  <br>
+    GiveCommand  <br>
+    HealthCommand  <br>
+    HungerCommand  <br>
+    KillCommand  <br>
+    PortalCommand  <br>
+    SayCommand  <br>
+    SetBlockCommand  <br>
+    TPCommand  <br>
+    <br>最初にスラッシュ( / )を付けることでコマンドを実行することが可能です。<br>
+    (例) /tp ~~~ ~~~ <br>
+    詳しくはモジュールを長押しすると確認することが可能となります。
+  `;
+  showMessage(message);
+}
+
+  function show3DModelMessage() {
+  const message = `
+    3Dモデルを作成できます。<br>
+    updateを押すことで更新されます。 <br><br>
+
+    3Dモデルの作り方はDiscord公式サーバーから直接見てください。<br>
+    
   `;
   showMessage(message);
 }
