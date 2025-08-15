@@ -118,16 +118,15 @@ a:hover {
 
 <div class="container">
   <div class="left-panel active">
-    <p>PinkDiamondが新しく更新されました。<br>まだ更新してない方は今すぐに更新お願いします。</p>
-    <a href="https://pinkd.site/" target="_blank">PinkDiamond公式サイトはこちら</a><br>
+    <p>PinkDiamondが新しく更新されました。</p>
+    <p>ゲーム内「設定」タブから「使い方」を押すとこのサイトへ飛ぶことができます。<br>※飛ぶ際はゲームが中断されるのでご注意ください。</p>
+    <a href="https://forum.mcpinkd.com/" target="_blank">PinkDiamond公式サイトはこちら</a><br>
     <a href="https://cotone64.github.io/cotone/" target="_blank">サイト作成者のホームページはこちら</a><br>
     <br>
-    <a href="https://youtu.be/Fv2Z2-6w0bY" target="_blank">ワールドエディットの徹底解説はこちら</a><br>
     <br><br>
-    <p>サイト作成期間 <br>2025/4/14 - 4/16</p>
-    <p>サイト作成日   <br>2025/4/17</p>
-    <p>サイト更新日   <br>2025/4/19<br>2025/4/22<br>2025/5/11<br>2025/8/15</p>
-    <p>サイト作成者   ことね</p>
+    <p>サイト作成日       <br>2025/4/17</p>
+    <p>サイト最終更新日   <br>2025/8/15</p>
+    <p>サイト作成者:    ことね</p>
     <br><br><br>
     <p>このサイトでのPinkDiamondバージョン情報<br>v2.0.0a Beta 4</p>
 </div>
@@ -204,19 +203,22 @@ a:hover {
     <button class="menu-button" onclick="showMessage('遠くの景色を拡大、縮小できます。<br>距離を調整できます。')">ズーム</button>
     <button class="menu-button" onclick="showMessage('チェストにESPが付きます。<br>チェスト関連のものを設定できます。<br>ボックス(枠)、トレーサー(目線)、色を指定できます。')">チェストESP</button>
     <button class="menu-button" onclick="showMessage('テクスチャのロードが無効化になります。')">テクスチャ無効</button>
-
     <button class="menu-button" onclick="showMessage('トーテムを持って死んだときのアニメーションを無効にします。')">トーテムアニメ無効</button>
+
     <button class="menu-button" onclick="showMessage('画面が明るくなります。')">ナイトビジョン</button>
     <button class="menu-button" onclick="showMessage('ネームタグが表示されます。')">ネームタグ</button>
     <button class="menu-button" onclick="showMessage('パーティクルが無効化になります。')">パーティクル無効</button>
     <button class="menu-button" onclick="showMessage('エンチャントレベルが全て数字で表示されます。')">レベル正規化</button>
+    <button class="menu-button" onclick="showMessage('周りにいるプレイヤーやモンスター、動物などの位置が画面に表示されるようになります。')">レーダー</button>
     <button class="menu-button" onclick="showMessage('体力が表示されます。')">体力表示</button>
-
     <button class="menu-button" onclick="showMessage('座標が表示されます。<br>描画した場所を固定できます。<br>背景と文字の色を指定することができます。<br>描画の枠をなめらかにできます。')">座標表示</button>
+
     <button class="menu-button" onclick="showMessage('エンティティに枠が表示されます。')">当たり判定表示</button>
     <button class="menu-button" onclick="showMessage('描画距離を変更することができます。<br> デフォルトは50 <br>1～100まで設定することができます。')">描画距離を変更</button>
     <button class="menu-button" onclick="showMessage('火の表示を無効化できます。<br>燃えてるときの高さを調整できます。')">火を非表示</button>
+    <button class="menu-button" onclick="showMessage('ゲーム画面が揺れた時の揺れを無効化します。')">画面の揺れ無効</button>
     <button class="menu-button" onclick="showMessage('視野を変更することができます。<br>角度を調整できます。')">視野角</button>
+    <button class="menu-button" onclick="showMessage('天候を常に晴れにすることができます。')">雨無効</button>
     <button class="menu-button" onclick="showMessage('霧の表示を無効化できます。')">霧を非表示</button>
   </div>
   <div class="left-panel">
@@ -240,27 +242,29 @@ a:hover {
   </div>
   <div class="left-panel">
     <button class="menu-button" onclick="show3DModelMessage()">3Dアート</button>
+    <button class="menu-button" onclick="showNBTtagMessage()">NBT編集</button>
+
     <button class="menu-button" onclick="showMessage('追放されなくなります。')">アンチキック</button>
-    
     <button class="menu-button" onclick="showMessage('コマンドが全て無効化されます。')">アンチコマンド</button>
+    
     <button class="menu-button" onclick="showMessage('形と範囲を指定できる簡易的なヌーカーです。<br>立方体か球体か指定できます。<br>範囲を指定できます。')">ヌーカー</button>
-    
     <button class="menu-button" onclick="showMessage('ドット絵を作成できます。<br>updateを押すと更新されます。<br>方角を指定できます。')">ピクセルアート</button>
-    <button class="menu-button" onclick="showWorldEditMessage()">ワールドエディット</button>
     
+    <button class="menu-button" onclick="showWorldEditMessage()">ワールドエディット</button>
     <button class="menu-button" onclick="showMessage('ヌーカーの高速バージョンです。<br>立方体か球体か指定できます。<br>範囲を指定できます。')">高速ヌーカー</button>
     </div>
     <div class="left-panel">
         <button class="menu-button" onclick="showMessage('追加コンテンツの制限を解除します。')">DLC解除</button>
         <button class="menu-button" onclick="showMessage('Miiの名前を変更できます。<br>名前を変更できる場所があります。')">Miiの名前変更</button>
         <button class="menu-button" onclick="showMessage('NNIDを変更できます。<br>IDを変更できる場所があります。')">NNID変更</button>
-        
         <button class="menu-button" onclick="showMessage('ミニゲームでパブリックを有効にできます。')">パブリック有効</button>
+
         <button class="menu-button" onclick="showMessage('フレンドのフレンドの制限を解除します。(現在Pretendoでは対応されてません。)')">フレフレ無効</button>
         <button class="menu-button" onclick="showMessage('オンラインでもホームボタンを解除できます。')">ホームボタン解除</button>
-        
         <button class="menu-button" onclick="showMessage('声を変更できます。<br>ピッチを調整できます。')">ボイスチェンジャー</button>
+
         <button class="menu-button" onclick="showMessage('相手に声が聞こえなくなります。')">マイクミュート</button>
+        <button class="menu-button" onclick="showMessage('メッセージ画面を開かなくても常に小さい画面で起動させておくことができます。')">メッセージ</button>
         <button class="menu-button" onclick="showMessage('メインメニューへ戻ります。')">メニューに戻る</button>
         
         <button class="menu-button" onclick="showMessage('ミニゲーム内での戦績をいつでも確認することができます。')">常に戦績確認</button>
@@ -490,7 +494,21 @@ a:hover {
   他のアイテムについて解説<br>
   バケツを使用することで、水や溶岩のみを削除することができます。<br>
   背の高い草を使用することで、土ブロックを草ブロックに上書きすることができます。<br>
+  たいまつを使用することで、効率よくたいまつを設置することができます。<br>
 
+  `;
+  showMessage(message);
+}
+
+  function showNBTtagMessage() {
+  const message = `
+    アイテムを細かく改造することができます。<br>
+    アイテムにNBTが付いてるか確認がしたい場合は、アイテムID表示を付けることをお勧めします。<br><br>
+
+    エディションごとに使える幅が違います。<br>
+    ・Free版: NBTデータの閲覧ができます。<br>
+    ・Premium版: 数値や文字列など、基本的なデータ編集が可能です。<br>
+    ・Professional版: すべての機能をご利用いただけます。<br><br>
   `;
   showMessage(message);
 }
