@@ -130,7 +130,7 @@ a:hover {
     <p>このサイトでのPinkDiamondバージョン情報<br>v2.0.0a Beta 4</p>
 </div>
     <div class="left-panel">
-    <button class="menu-button" onclick="showMessage('Kaura V4が適応されます。<br><br>Kaura4.0の使い方<br><b>1. プレイヤーの指定<br>ボタン式の場合<br>プレイヤーを指定する場合は「R & 十字下」で指定できます。<br>前に戻るには「L & 十字下」で戻ります。<br>プレイヤーを指定するとSingleAuraでそのプレイヤーを攻撃できます。<br>またTargetListに追加することができます。<br>視点式の場合<br>視点でプレイヤーを指定する場合は「ZL & 十字左」を長押しで指定できます。<br>「ZL & 十字左」を押している間は少しズームされてプレイヤーを見ると登録されます。<br><b2. TargetListについて<br>TargetListはプレイヤーを100人まで登録できます。<br>登録したプレイヤーはTargetAuraで攻撃することができます。<br>プレイヤーを登録する場合は「ZL & 十字下」<br>登録を解除する場合はもう一度「ZL & 十字下」<br><b3. SingleAuraについて<br>SingleAuraは指定したプレイヤーを攻撃することができます。<br>攻撃する場合は「ZR & 十字上」で1回攻撃できます。<br>自動攻撃は「十字上 ×5 短時間押し」で一定時間ごとに攻撃します。<br>もう一度「十字上 ×5 短時間押し」で解除します。<br><b4. InfinityAuraについて<br>InfinityAuraはワールドに居るプレイヤーを全員攻撃します。<br>攻撃する場合は「ZR & 十字左」で1回攻撃できます。<br>自動攻撃は「十字左 ×5 短時間押し」で一定時間ごとに攻撃します。<br>もう一度「十字左 ×5 短時間押し」で解除します。<br><b5. TargetAuraについて<br>TargetAuraはTargetListに登録されたプレイヤーを全員攻撃します。<br>攻撃する場合は「ZR & 十字下」で1回攻撃できます。<br>自動攻撃は「十字下 ×5 短時間押し」で一定時間ごとに攻撃します。<br>もう一度「十字下 ×5 短時間押し」で解除します。<br><b6. AttackSpeed、MultiAttack、HitRataについて<br>AttackSpeedは自動攻撃する速度を10段階で調整できます。<br>「十字左 & R」で速度を上げます。<br>「十字左 & L」で速度を下げます。<br><bMultiAttackは一回攻撃したときに複数回攻撃することができます。<br>10段階で攻撃する回数を調整できます。<br>「十字上 & R」で攻撃回数を上げます。<br>「十字上 & L」で攻撃回数を下げます。<br><bHitRataは相手が高速移動していても攻撃を当てることができます。<br>5段階に調整できますが上げすぎるとサーバーに負荷が掛かります。<br>「十字右 & R」で精度(負荷が掛かります)を上げます。<br>「十字右 & L」で精度(負荷が下がります)を下げます。')">KオーラV4</button>
+    <button class="menu-button" onclick="showKauraV4Message()">KオーラV4</button>
     <button class="menu-button" onclick="showMessage('ZLボタンが連打できます。')">ZL連打</button>
     <button class="menu-button" onclick="showMessage('ZRボタンが連打できます。')">ZR連打</button>
     <button class="menu-button" onclick="showMessage('ノックバックしなくなります。')">アンチノックバック</button>
@@ -138,6 +138,7 @@ a:hover {
     <button class="menu-button" onclick="showMessage('自動的にエイムを敵に合わせてくれる補正機能です。<br>プレイヤーかエンティティか指定することができます。<br>検知する範囲や角度、速さ、高さを設定することができます。')">エイムアシスト</button>
     
     <button class="menu-button" onclick="showMessage('自動的にエイムを敵に合わせてくれます。<br>プレイヤーかエンティティか設定できます。')">エイムボット</button>
+    <button class="menu-button" onclick="showKillAuraMessage()">キルオーラ</button>
     <button class="menu-button" onclick="showMessage('高速移動して回避しながら攻撃ができます。<br>検知する範囲や速さを設定できます。')">ターゲットストレイフ</button>
     <button class="menu-button" onclick="showMessage('エンティティに視点合わせると自動で攻撃してくれます。<br>範囲を設定できます。')">トリガーボット</button>
     <button class="menu-button" onclick="showMessage('矢の発射範囲を広げます。<br>方角をランダムにできます。')">マルチボウ</button>
@@ -239,6 +240,8 @@ a:hover {
     <button class="menu-button" onclick="showMessage('高速でクラフトすることができます。')">高速クラフト</button>
   </div>
   <div class="left-panel">
+    <button class="menu-button" onclick="show3DModelMessage()">3Dアート</button>
+    <button class="menu-button" onclick="showNBTtagMessage()">NBT編集</button>
 
     <button class="menu-button" onclick="showMessage('追放されなくなります。')">アンチキック</button>
     <button class="menu-button" onclick="showMessage('コマンドが全て無効化されます。')">アンチコマンド</button>
@@ -283,6 +286,7 @@ a:hover {
         <button class="menu-button" onclick="showMessage('不正で投票された投票を無効化します。')">不正投票無効</button>
     </div>
     <div class="left-panel">
+        <button class="menu-button" onclick="showSignCmdMessage()">看板コマンド</button>
         <button class="menu-button" onclick="showMessage('TNTが爆発したとき、ブロックが破壊されません。')">TNTブロック破壊無効</button>
         <button class="menu-button" onclick="showMessage('コンボを設定することができます。<br>コンボを調整できます。')">カスタムコンボ</button>
         <button class="menu-button" onclick="showMessage('エンチャント内容を合成するときの上限がなくなります。')">エンチャント上限解除</button>
@@ -364,6 +368,191 @@ a:hover {
       }
     }
   }
+
+  function showKauraV4Message() {
+  var message = `
+    Kaura V4が適応されます。<br><br>
+    Kaura4.0の使い方<br><br>
+
+    1. プレイヤーの指定<br>
+    ボタン式の場合<br>
+    プレイヤーを指定する場合は「R & 十字下」で指定できます<br>
+    前に戻るには「L & 十字下」で戻ります<br>
+    プレイヤーを指定するとSingleAuraでそのプレイヤーを攻撃できます<br>
+    またTargetListに追加することができます<br>
+    視点式の場合<br>
+    視点でプレイヤーを指定する場合は「ZL & 十字左」を長押しで指定できます<br>
+    「ZL & 十字左」を押している間は少しズームされてプレイヤーを見ると登録されます<br><br>
+
+    2. TargetListについて<br>
+    TargetListはプレイヤーを100人まで登録できます<br>
+    登録したプレイヤーはTargetAuraで攻撃することができます<br>
+    プレイヤーを登録する場合は「ZL & 十字下」<br>
+    登録を解除する場合はもう一度「ZL & 十字下」<br><br>
+
+    3. SingleAuraについて<br>
+    SingleAuraは指定したプレイヤーを攻撃することができます<br>
+    攻撃する場合は「ZR & 十字上」で1回攻撃できます<br>
+    自動攻撃は「十字上 ×5 短時間押し」で一定時間ごとに攻撃します<br>
+    もう一度「十字上 ×5 短時間押し」で解除します<br><br>
+
+    4. InfinityAuraについて<br>
+    InfinityAuraはワールドに居るプレイヤーを全員攻撃します<br>
+    攻撃する場合は「ZR & 十字左」で1回攻撃できます<br>
+    自動攻撃は「十字左 ×5 短時間押し」で一定時間ごとに攻撃します<br>
+    もう一度「十字左 ×5 短時間押し」で解除します<br><br>
+
+    5. TargetAuraについて<br>
+    TargetAuraはTargetListに登録されたプレイヤーを全員攻撃します<br>
+    攻撃する場合は「ZR & 十字下」で1回攻撃できます<br>
+    自動攻撃は「十字下 ×5 短時間押し」で一定時間ごとに攻撃します<br>
+    もう一度「十字下 ×5 短時間押し」で解除します<br><br>
+
+    6. AttackSpeed、MultiAttack、HitRataについて<br>
+    AttackSpeedは自動攻撃する速度を10段階で調整できます<br>
+    「十字左 & R」で速度を上げます<br>
+    「十字左 & L」で速度を下げます<br><br>
+
+    MultiAttackは一回攻撃したときに複数回攻撃することができます<br>
+    10段階で攻撃する回数を調整できます<br>
+    「十字上 & R」で攻撃回数を上げます<br>
+    「十字上 & L」で攻撃回数を下げます<br><br>
+
+    HitRataは相手が高速移動していても攻撃を当てることができます<br>
+    5段階に調整できますが上げすぎるとサーバーに負荷が掛かります<br>
+    「十字右 & R」で精度(負荷が掛かります)を上げます<br>
+    「十字右 & L」で精度(負荷が下がります)を下げます
+  `;
+  showMessage(message);
+}
+
+  function showSignCmdMessage() {
+  var message = `
+    サインコマンドが適応されます。<br><br>
+    サインコマンドの主な情報<br>
+
+    看板を使用することで細かな設定を追加することができます。<br>
+    現在導入予定なコマンド内容はこちらです。<br>
+    EffectCommand  <br>
+    GameModeCommand  <br>
+    GiveCommand  <br>
+    HealthCommand  <br>
+    HungerCommand  <br>
+    KillCommand  <br>
+    PortalCommand  <br>
+    SayCommand  <br>
+    SetBlockCommand  <br>
+    TPCommand  <br>
+    <br>最初にスラッシュ( / )を付けることでコマンドを実行することが可能です。<br>
+    (例) /tp ~~~ ~~~ <br>
+    詳しくはモジュールを長押しすると確認することが可能となります。
+  `;
+  showMessage(message);
+}
+
+  function show3DModelMessage() {
+  var message = `
+    3Dモデルを作成できます。<br>
+    updateを押すことで更新されます。 <br><br>
+
+    3Dモデルの作り方はDiscord公式サーバーから直接見てください。<br>
+
+  `;
+  showMessage(message);
+}
+
+  function showWorldEditMessage() {
+  var message = `
+
+  ブロックの編集ができます。<br><br>
+  ワールドエディットの使い方<br>
+  
+  ツールを左手に持つことができます。<br>
+  ツールを左手に持つ方法は、スワップオフハンドのモジュールを適応する必要があります。<br><br>
+  
+  各ツールを左手に持つと、それに準じた枠が表示されます。<br><br>
+  
+  
+  実行方法は、「ZL & 十字キー下」<br>
+  ツールによっては、ブロックを持った状態や持たない状態で適応されます。<br><br>
+  
+  
+  ツールを持った状態で、範囲を調節することができます。<br>
+  「十字キー下 & L」大きさを拡大<br>
+  「十字キー下 & R」大きさを縮小<br>
+  範囲が大きければ大きいほど、処理が重たくなります。<br>
+  大きさに限度はないですが、クラッシュする可能性が高くなります。<br><br>
+  
+  一部のツールでなめらかさを変更することができます。<br>
+  十字キー左とLRを押すことで、細かく設定することができます。<br>
+  「十字キー左 & L」大きさを拡大<br>
+  「十字キー左 & R」大きさを縮小<br>
+  
+  鉄のツルハシ、金のツルハシ、ダイヤモンドのツルハシは、<br>
+  「ZR & 十字キー下」ボタンを押すことで、範囲を自由に設定することができます。<br><br>
+  
+  木の斧を使用することで、球体状にブロックを敷き詰めることができます。<br><br>
+  
+  木のツルハシを使用することで、球体状にブロックを削ることができます。<br><br>
+  
+  木のシャベルを使用することで、ブロックを削ることができます。<br><br>
+  
+  木のクワを使用することで、柱状にブロックを置くことができます。<br>
+  上のブロックを起点に下の地面まで作成することができます。<br><br>
+  
+  石のシャベルを使用することで、ブロックを盛り上げることができます。<br><br>
+  
+  石の斧を使用することで、視点先にあるブロックを編集することができます。<br>
+  ・ブロックを持つと、視点先のブロックにそのブロックを上書きすることができます。<br>
+  ・何も持たない状態だと、視点先にある1種類のブロックを削ることができます。<br><br>
+  
+  石のクワを使用することで、足元を中心にブロックを置くことができます。<br><br>
+  
+  鉄の斧を使用することで、枠のみを作成することができます。<br><br>
+  
+  鉄のツルハシを使用することで、壁を作成することができます。<br>
+  ・ブロックを持つと壁が作成されます。<br>
+  ・何も持たない状態で、削除することができます。<br><br>
+  
+  金のツルハシを使用することで、思った通りの形に円形を作成できます。<br><br>
+  
+  ダイヤモンドのツルハシを使用することで、立体状に敷き詰めることができます。<br><br><br>
+  
+
+  他のアイテムについて解説<br>
+  バケツを使用することで、水や溶岩のみを削除することができます。<br>
+  背の高い草を使用することで、土ブロックを草ブロックに上書きすることができます。<br>
+  たいまつを使用することで、効率よくたいまつを設置することができます。<br>
+
+  `;
+  showMessage(message);
+}
+
+  function showNBTtagMessage() {
+  var message = `
+    アイテムを細かく改造することができます。<br>
+    アイテムにNBTが付いてるか確認がしたい場合は、アイテムID表示を付けることをお勧めします。<br><br>
+
+    エディションごとに使える幅が違います。<br>
+    ・Free版: NBTデータの閲覧ができます。<br>
+    ・Premium版: 数値や文字列など、基本的なデータ編集が可能です。<br>
+    ・Professional版: すべての機能をご利用いただけます。<br><br>
+  `;
+  showMessage(message);
+}
+
+  function showKillAuraMessage() {
+  var message = `
+    攻撃する範囲を調整できます。<br><br>
+    機能が増えました。<br>
+    ・範囲を調整する際、枠が表示されて見えやすくなりました。<br>
+    ・攻撃する速さや距離を、スライダーを動かすだけで直感的に調整できます。<br>
+    ・ターゲット選択が細かくできるようになりました。<br>
+    プレイヤー、モンスター、動物など、攻撃したい相手を細かく選べるようになりました。<br>
+  `;
+  showMessage(message);
+}
+
 
 </script>
 
