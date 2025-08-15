@@ -114,12 +114,11 @@ a:hover {
   <div class="tab-button" onclick="switchTab(6)">その他</div>
   <div class="tab-button" onclick="switchTab(7)">パッチ</div>
   <div class="tab-button" onclick="switchTab(8)">サーバー</div>
+  <div class="tab-button" onclick="switchTab(9)">情報</div>
 </div>
 
 <div class="container">
   <div class="left-panel active">
-    <p>PinkDiamondが新しく更新されました。</p>
-    <p>ゲーム内「設定」タブから「使い方」を押すとこのサイトへ飛ぶことができます。<br>※飛ぶ際はゲームが中断されるのでご注意ください。</p>
     <a href="https://forum.mcpinkd.com/" target="_blank">PinkDiamond公式サイトはこちら</a><br>
     <a href="https://cotone64.github.io/cotone/" target="_blank">サイト作成者のホームページはこちら</a><br>
     <br>
@@ -139,7 +138,7 @@ a:hover {
     <button class="menu-button" onclick="showMessage('自動的にエイムを敵に合わせてくれる補正機能です。<br>プレイヤーかエンティティか指定することができます。<br>検知する範囲や角度、速さ、高さを設定することができます。')">エイムアシスト</button>
     
     <button class="menu-button" onclick="showMessage('自動的にエイムを敵に合わせてくれます。<br>プレイヤーかエンティティか設定できます。')">エイムボット</button>
-    <button class="menu-button" onclick="showMessage('攻撃する範囲を広げます。<br>範囲を設定できます。')">キルオーラ</button>
+    <button class="menu-button" onclick="showKillAuraMessage()">キルオーラ</button>
     <button class="menu-button" onclick="showMessage('高速移動して回避しながら攻撃ができます。<br>検知する範囲や速さを設定できます。')">ターゲットストレイフ</button>
     <button class="menu-button" onclick="showMessage('エンティティに視点合わせると自動で攻撃してくれます。<br>範囲を設定できます。')">トリガーボット</button>
     <button class="menu-button" onclick="showMessage('矢の発射範囲を広げます。<br>方角をランダムにできます。')">マルチボウ</button>
@@ -315,6 +314,35 @@ a:hover {
         <button class="menu-button" onclick="showMessage('エンティティに雪玉を当てるとダメージが通ります。')">雪玉ダメージ</button>
         <button class="menu-button" onclick="showMessage('雪玉を飛ばすと爆発します。<br>雪玉が地面に着くまでか指定できます。')">雪玉爆発</button>
         <button class="menu-button" onclick="showMessage('飛び道具で当たったブロックが破壊されます。')">飛び道具で破壊</button>
+        </div>
+        <div class="left-panel">
+          <p>PinkDiamondが新しく更新されました。<br><br>
+
+          新たな機能が6つ公開されました。<br>
+          ・レーダー<br>
+          ・NBT編集<br>
+          ・看板コマンド<br>
+          ・画面の揺れ無効<br>
+          ・雨無効<br>
+          ・メッセージウィンドウ<br>
+          使い方やどのようなものなのかは、他タブからご覧ください。<br><br>
+
+          3つの機能がアップグレードされました。<br>
+          ・ワールドエディットに「松明ツール」が追加されました。<br>
+          ・キルオーラに機能が追加され、細かく調整できるようになりました。<br>
+          ・メッセージに返信機能が追加されました。<br>
+          ゲーム内のチャットや掲示板で、特定のメッセージに簡単に返信できるようになりました。<br>
+          かんたん返信: 各投稿の横に新設された「返信」ボタンを押すか、投稿者の名前をタップすると、すぐに返信モードになります。<br>
+          会話が分かりやすく: 返信として送ったメッセージは「○○さんへの返信」という形で表示され、誰宛のメッセージか一目で分かります。<br><br>
+          
+          ゲーム内「設定」タブから「使い方」を押すとこのサイトへ飛ぶことができます。<br>
+          ※飛ぶ際はゲームが中断されるのでご注意ください。<br><br>
+
+          残念なお知らせ<br>
+          掲示板のサイトが新しくなったため、前のサイトへはアクセスできなくなりました。<br><br>
+
+          更新する内容がある場合、機能が増えた場合にはサイトが更新されます。<br>
+        </p>
         </div>
 
   <div class="right-panel">
@@ -512,6 +540,19 @@ a:hover {
   `;
   showMessage(message);
 }
+
+  function showKillAuraMessage() {
+  const message = `
+    攻撃する範囲を調整できます。<br><br>
+    機能が増えました。<br>
+    ・範囲を調整する際、枠が表示されて見えやすくなりました。<br>
+    ・攻撃する速さや距離を、スライダーを動かすだけで直感的に調整できます。<br>
+    ・ターゲット選択が細かくできるようになりました。<br>
+    プレイヤー、モンスター、動物など、攻撃したい相手を細かく選べるようになりました。<br>
+  `;
+  showMessage(message);
+}
+
 
 </script>
 
